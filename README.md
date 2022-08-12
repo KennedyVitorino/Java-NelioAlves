@@ -4,7 +4,7 @@ Sintaxe:
  `<tipo> <nome>` = `<valor inicial>;`
 sendo o `valor inicial`
 
-## Exemplos:
+## Exemplos
 
 `int idade = 25;` Inteiro
 
@@ -12,7 +12,7 @@ sendo o `valor inicial`
 
 `char sexo = 'F';` Caractere
 
-### Uma variável possui:
+### Uma variável possui
 
 - Nome (ou identificardor)
 - Tipo
@@ -239,7 +239,6 @@ Se você então fizer um **nextLine()**,
 aquela quebra de linha pendente
 será absorvida pelo **nextLine()**.
 
-
 ``` java
 int x;
 String s1, s2, s3;
@@ -303,4 +302,95 @@ public class Main {
     System.out.println("Valor absoluto de " + z + " = " + B);
   }
 }
+```
+
+### Operadores de atribuição cumulativa
+
+| a += b; | a = a + b; |
+|:----|:----:|
+| a -= b; | a = a - b; |
+| a *= b; | a = a * b; |
+| a /= b; | a = a / b; |
+| a %= b; | a = a % b; |
+
+> Exemplo:
+
+``` java
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Main {
+
+ public static void main(String[] args) {
+
+  try (Scanner sc = new Scanner(System.in)) {
+
+   Locale.setDefault(Locale.US);
+
+   int minutos = sc.nextInt();
+
+   double conta = 50.0;
+
+   if (minutos > 100) {
+    conta += (minutos - 100) * 2.0;
+   }
+   System.out.printf("Valor da conta: R$ %.2f%n", conta);
+
+  }
+ }
+}
+```
+
+### Expressão condicional ternária
+
+Estrutura opcional ao if-else quando se deseja decidir um VALOR com base em uma
+condição.
+
+**Sintaxe:**
+
+`( condição ) ? valor_se_verdadeiro : valor_se_falso`
+
+**Exemplos:**
+
+`( 2 > 4 ) ? 50 : 80` -> 80
+
+`( 10 != 3 ) ? "Maria" : "Alex"` -> "Maria"
+
+**Demonstração:**
+
+``` Java
+double preco = 34.5;
+double desconto;
+
+if (preco < 20.0) {
+  desconto = preco * 0.1;
+}
+else {
+  desconto = preco * 0.05;
+}
+```
+
+``` Java
+double preco = 34.5;
+double desconto = (preco < 20.0) ? preco * 0.1 : preco * 0.05;
+```
+
+### Escopo e inicialização
+
+Checklist:
+
+- Escopo de uma variável: é a região do programa onde a variável é
+válida, ou seja, onde ela pode ser referenciada.
+
+- Uma variável não pode ser usada se não for iniciada.
+
+- Falaremos de escopo de métodos no Capítulo 5.
+
+``` Java
+double price = sc.nextDouble();
+
+if (price > 100.0) {
+  double discount = price * 0.1;
+}
+System.out.println(discount);
 ```

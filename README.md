@@ -332,7 +332,7 @@ public class Main {
    double conta = 50.0;
 
    if (minutos > 100) {
-    conta += (minutos - 100) * 2.0;
+    conta += (minutos - 100) * 2.0;         
    }
    System.out.printf("Valor da conta: R$ %.2f%n", conta);
 
@@ -348,13 +348,13 @@ condição.
 
 **Sintaxe:**
 
-`( condição ) ? valor_se_verdadeiro : valor_se_falso`
+`(condição) ? valor_se_verdadeiro : valor_se_falso`
 
 **Exemplos:**
 
-`( 2 > 4 ) ? 50 : 80` -> 80
+`(2 > 4) ? 50 : 80` -> 80
 
-`( 10 != 3 ) ? "Maria" : "Alex"` -> "Maria"
+`(10 != 3) ? "Maria" : "Alex"` -> "Maria"
 
 **Demonstração:**
 
@@ -393,4 +393,46 @@ if (price > 100.0) {
   double discount = price * 0.1;
 }
 System.out.println(discount);
+```
+
+### Como utilizar o Debug no Eclipse (execução passo a passo)
+
+- Para marcar uma linha de breakpoint:
+  - Run -> toggle
+
+- Para iniciar o debug:
+  - Botão direito na classe -> Debug as -> Java Application
+
+- Para executar uma linha:
+  - F6
+- Para interromper o debug:
+
+    ![parar debug](https://user-images.githubusercontent.com/82242582/184365884-fda33737-d84f-4c2f-ba19-c8b696ae1ca1.png)
+
+### Código de Exemplo
+
+``` Java
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Main {
+  
+  public static void main(String[] args) {
+  
+  Locale.setDefault(Locale.US);
+  Scanner sc = new Scanner(System.in);
+
+  double largura = sc.nextDouble();
+  double comprimento = sc.nextDouble();
+  double metroQuadrado = sc.nextDouble();
+
+  double area = largura * comprimento;
+  double preco = area * metroQuadrado;
+
+  System.out.printf("AREA = %.2f%n", area);
+  System.out.printf("PRECO = %.2f%n", preco);
+  sc.close();
+
+  }
+}
 ```

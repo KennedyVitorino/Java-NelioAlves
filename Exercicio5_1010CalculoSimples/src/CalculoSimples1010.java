@@ -29,6 +29,7 @@ public class CalculoSimples1010 {
 
 			total = pre1 * qte1 + pre2 * qte2;
 
+			System.out.println("Código do prod 1:" + cod1 + "| Código do prod 2: " + cod2);
 			System.out.printf("VALOR A PAGAR: R$ %.2f%n", total);
 
 		}

@@ -24,8 +24,26 @@ public class Program {
 			product.quantity = sc.nextInt();
 
 			// Print provisório para verificar se o programa está rodando
-			System.out.println(product);
+			System.out.println();
+			
+			// Adicionando produtos ao stock
+			System.out.print("Enter the numter of produtcs to be added in stock: ");
+			int quantity = sc.nextInt();
+			product.addProducts(quantity); // att da quantidade dentro do obj product
+			
+			System.out.println();
+			System.out.println("Update data: " + product);
+			
+			// Removendo produtos do stock 
 			System.err.println();
+			System.out.print("Enter the numter of produtcs to be removed from stock: ");
+			quantity = sc.nextInt();
+			product.removeProducts(quantity);
+			
+			System.out.println();
+			System.out.println("Update data: " + product);
+
+
 		}
 	}
 }

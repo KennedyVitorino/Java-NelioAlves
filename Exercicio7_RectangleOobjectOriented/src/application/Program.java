@@ -1,8 +1,13 @@
 package application;
+/**
+ * Exercício 1
+ * Fazer um programa para ler os valores da largura e altura de um retângulo.
+ * Em seguida, mostrar na tela o valor de sua área, perímetro e diagonal. Criar 
+ * uma classe chamada Rectangle.
+ */
 
 import java.util.Locale;
 import java.util.Scanner;
-
 import entities.Rectangle;
 
 public class Program {

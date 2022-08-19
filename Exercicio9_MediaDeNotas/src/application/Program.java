@@ -1,5 +1,9 @@
 package application;
 
+import java.util.Locale;
+import java.util.Scanner;
+import entities.Student;
+
 /**
  * Exercício 3
  * Fazer um programa para ler o nome de um aluno e as três notas que ele obteve
@@ -14,9 +18,30 @@ package application;
 public class Program {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+		try(Scanner sc = new Scanner(System.in)) {
+			
+			Locale.setDefault(Locale.US);
+			
+			Student student = new Student();
+
+			student.name = sc.nextLine();
+			student.grade1 = sc.nextDouble();
+			student.grade2 = sc.nextDouble();
+			student.grade3 = sc.nextDouble();
+
+			System.out.printf("FINAL GRADE: %.2f%n", student.finalGrade());
+		
+			if (student.finalGrade() < 60.0) {
+				System.out.println("FAILED! ! !");
+				System.out.printf("MISSING %.2f%n", student.missingPts());
+			}
+			else {
+				System.out.println("PASS! ! !");
+			}
+		
+		
+		}
 	}
-
 }
 

@@ -436,3 +436,32 @@ public class Main {
   }
 }
 ```
+
+### Operadores bitwise
+
+| Operador | significado |
+|:-----:|:-----:|
+| & | Operação "E" bit a bit |
+| &#124; | Operação "OU" bit a bit |
+| ^ | Operação "OU-exclusivo" bit a bit |
+
+| C1 | C2 | C1 E C2|
+|:---:|:---:|:---:|
+| F | F | F |
+| F | V | F |
+| V | F | F |
+| V | V | V |
+
+| C1 | C2 | C1 OU C2|
+|:---:|:---:|:---:|
+| F | F | F |
+| F | V | V |
+| V | F | V |
+| V | V | V |
+
+| C1 | C2 | C1 XOR C2|
+|:---:|:---:|:---:|
+| F | F | F |
+| F | V | V |
+| V | F | V |
+| V | V | F |

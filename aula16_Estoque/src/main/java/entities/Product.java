@@ -7,7 +7,6 @@ public class Product {
     public int quantity;
 
     // CONSTRUTOR
-
     public Product() {
 
     }

@@ -8,7 +8,6 @@ public class Product {
 
     // CONSTRUTOR
     public Product() {
-
     }
 
     public Product(String name, double price, int quantity) {

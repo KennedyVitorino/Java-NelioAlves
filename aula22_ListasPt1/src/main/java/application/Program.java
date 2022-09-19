@@ -29,12 +29,9 @@ public class Program {
 
         // Tamanho da lista
         System.out.println("Tamanho da lista: " + list.size());
+
+        // Remover da lista a partir de um predicado
         System.out.println("------------------------------");
-
-
-        /* Remover da lista
-        list.remove(1);
-        Remover da lista a partir de um PREDICADO*/
         System.out.println("Removendo elementos da lista a partir de um PREDICADO: ");
         list.removeIf(x -> x.charAt(0) == 'M');
         for (String x : list) {
@@ -50,21 +47,20 @@ public class Program {
         // Retorna -1 quando não encontra o elemento
         System.out.println("Index of Marco: " + list.indexOf("Marco"));
 
-        // Filtrar elementos da lista a partir de um PREDICADO
+        // Filtrar lista de modo que fique na lista somente aqueles elementos que começam com o caractere A
         System.out.println("------------------------------");
-        System.out.println("Filtrar elementos da lista a partir de um PREDICADO:");
+        System.out.println("Filtrar lista de modo que fique na lista somente aqueles elementos que começam com o caractere 'A':");
         List<String> result = list.stream().filter(x -> x.charAt(0) == 'A').toList();
         for(String x : result) {
             System.out.println(x);
         }
-
+        // Encontrar um elemento da lista que atenda certo predicado
         System.out.println("------------------------------");
-        String name = list.stream().filter(x -> x.charAt(0) == 'J').findFirst().orElse(null);
+        System.out.println("Encontrar um elemento da lista que atenda certo predicado:");
+        String name = list.stream().filter(x -> x.charAt(0) == 'B').findFirst().orElse(null);
         System.out.println(name);
 
-
-
-
-
+        String name1 = list.stream().filter(x -> x.charAt(0) == 'J').findFirst().orElse(null);
+        System.out.println("Caso não exista o elemento será retornado:\n" + name1);
     }
 }

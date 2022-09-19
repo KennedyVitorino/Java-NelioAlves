@@ -71,7 +71,6 @@ public class Program {
                 out.print("Enter the percentage: ");
                 double percent = scan.nextDouble();
                 list.get(pos).increaseSalary(percent);
-
             }
 
 

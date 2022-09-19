@@ -1,18 +1,15 @@
 package application;
 
-import entities.Employee;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
+import entities.Employee;
 
 import static java.lang.System.*;
 
 
-/** @author Davyd Kennedy Vitorino
+/** @author Davyd Kennedy Vitorino*
  * Fazer um programa para ler um número inteiro N e depois os
  * dados (id, nome e salario) de N funcionários. Não deve haver
  * repetição de id.
@@ -47,7 +44,11 @@ public class Program {
                 out.println();
                 out.println("Employee #" + (i + 1) + ":");
                 out.print("Id: ");
-                Integer id = scan.nextInt();
+                int id = scan.nextInt();
+                while (hasId(list, id)){
+                    out.println("Id already taken! Try again: ");
+                    id = scan.nextInt();
+                }
 
                 out.print("Name: ");
                 scan.nextLine(); // limpeza do buffer de entrada
@@ -61,31 +62,33 @@ public class Program {
                 list.add(emp);
             }
 
+            out.println();
             out.print("Enter the employee id that will have salary increase: ");
             int idSalary = scan.nextInt();
-            Integer pos = position(list, idSalary);
-            if (pos == null) {
+
+            Employee emp = list.stream().filter(x -> x.getId() == idSalary).findFirst().orElse(null);
+            //Integer pos = position(list, idSalary);
+
+            if (emp == null) {
                 out.println("This id does not exist!");
             }
             else {
                 out.print("Enter the percentage: ");
                 double percent = scan.nextDouble();
-                list.get(pos).increaseSalary(percent);
+                emp.increaseSalary(percent);
             }
 
-
-
-
+            // PART 3 - LISTING EMPLYEES:
+            out.println();
+            out.println("List of employees: ");
+            for (Employee e : list) {
+                out.println(e);
+            }
         }
     }
 
-    public static @Nullable Integer position(@NotNull List<Employee> list, int id) {
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getId() == id) {
-                return i;
-            }
-        }
-        return null;
+    public static boolean hasId( List<Employee> list, int id) {
+        Employee emp = list.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
+        return emp != null;
     }
-
 }

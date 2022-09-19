@@ -18,6 +18,5 @@ public class Program {
         for (String obj : vect) {
             System.out.println(obj);
         }
-
     }
 }
